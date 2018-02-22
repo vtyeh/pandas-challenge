@@ -1,7 +1,5 @@
 Observed Trends:
--Looking at all the reading scores and math scores in each table, students tend to do better in reading than in math.
--Looking at the top performing schools, bottom performing schools, and passing rates by school type, students have a much higher passing rate in charter schools (~95%) than in district schools (~74%). 
--Looking at the summary of performance by spending ranges per student, it seems that students have a higher passing rate in the lower spending ranges (<$615).
+Looking at all the reading scores and math scores in each table, students tend to do better in reading than in math. Looking at the top performing schools, bottom performing schools, and passing rates by school type, students have a much higher passing rate in charter schools (~95%) than in district schools (~74%). Looking at the summary of performance by spending ranges per student, it seems that students have a higher passing rate in the lower spending ranges (<$615).
 
 ```python
 # Import dependencies
