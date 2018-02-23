@@ -1,5 +1,8 @@
-Observed Trends:
-Looking at all the reading scores and math scores in each table, students tend to do better in reading than in math. Looking at the top performing schools, bottom performing schools, and passing rates by school type, students have a much higher passing rate in charter schools (~95%) than in district schools (~74%). Looking at the summary of performance by spending ranges per student, it seems that students have a higher passing rate in the lower spending ranges (<$615).
+## Observed Trends:
+- Looking at all the reading scores and math scores in each table, students tend to do better in reading than in math. 
+- Looking at the top performing schools, bottom performing schools, and passing rates by school type, students have a much higher passing rate in charter schools (~95%) than in district schools (~74%). 
+- Looking at the summary of performance by spending ranges per student, it seems that students have a higher passing rate in the lower spending ranges (<$615).
+
 
 ```python
 # Import dependencies
@@ -18,7 +21,7 @@ students = pd.read_csv(student_path)
 students = pd.DataFrame(students)
 ```
 
-
+## District Summary
 ```python
 # Calculate total schools, students, and budget of district
 total_schools = schools['School ID'].count()
@@ -108,7 +111,7 @@ district_summary
 
 
 
-
+## School Summary
 ```python
 # Merge schools and students
 merge_df = pd.merge(schools, students, on="school")
@@ -263,7 +266,7 @@ school_summary.head()
 
 
 
-
+## Top Performing Schools (By Passing Rate)
 ```python
 # Create top performing schools summary by passing rate
 top_summary = school_summary.loc[school_summary['Overall Passing Rate'] > 90]
@@ -369,7 +372,7 @@ top_summary.sort_values(['Overall Passing Rate'], ascending=False).head()
 
 
 
-
+## Bottom Performing Schools (By Passing Rate)
 ```python
 # Create bottom performing schools summary by passing rate
 bottom_summary = school_summary.loc[school_summary['Overall Passing Rate'] < 75]
@@ -475,7 +478,7 @@ bottom_summary.sort_values(['Overall Passing Rate'], ascending=True).head()
 
 
 
-
+## Math Scores by Grade
 ```python
 # Math scores by grade
 ninth = students.loc[students['grade']=='9th'].groupby("school")
@@ -567,7 +570,7 @@ math_summary.head()
 
 
 
-
+## Reading Scores by Grade
 ```python
 # Reading scores by grade
 r_ninth = students.loc[students['grade'] == '9th'].groupby("school")
@@ -659,7 +662,7 @@ read_summary.head()
 
 
 
-
+## Scores by School Spending
 ```python
 # Create bins
 bins = [0,585,615,645,675]
@@ -754,7 +757,7 @@ spend_summary.mean()
 
 
 
-
+## Scores by School Size
 ```python
 # Create bins
 bins2 = [0, 1000, 2000, 5000]
@@ -837,7 +840,7 @@ size_summary.mean()
 
 
 
-
+## Scores by School Type
 ```python
 type_summary = school_summary.groupby("School Type")
 type_summary = type_summary[["Average Math Score", "Average Reading Score", "% Passing Math", 
