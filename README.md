@@ -64,9 +64,9 @@ district_summary
 
 
 
-
+```html
 <div>
-<!-- <style>
+<style>
     .dataframe thead tr:only-child th {
         text-align: right;
     }
@@ -78,7 +78,7 @@ district_summary
     .dataframe tbody tr th {
         vertical-align: top;
     }
-</style> -->
+</style> 
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -108,7 +108,7 @@ district_summary
   </tbody>
 </table>
 </div>
-
+```
 
 
 ## School Summary
